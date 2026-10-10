@@ -1,0 +1,18 @@
+{
+ "rendah (148 kunci)|reduceByKey": {
+  "time": 1.6790484719999768,
+  "shuffle_mb": 0.010185
+ },
+ "rendah (148 kunci)|groupByKey": {
+  "time": 1.1540806340001382,
+  "shuffle_mb": 0.019172
+ },
+ "tinggi (200.000 kunci)|reduceByKey": {
+  "time": 2.417678641000066,
+  "shuffle_mb": 4.475359
+ },
+ "tinggi (200.000 kunci)|groupByKey": {
+  "time": 3.144989631000044,
+  "shuffle_mb": 4.642871
+ }
+}

@@ -1,0 +1,54 @@
+Spark 4.2.0 | master=local[*] | defaultParallelism=8
+Jumlah partition awal : 8
+Baris per partition   : {0: 12516, 1: 12490, 2: 12510, 3: 12506, 4: 12499, 5: 12489, 6: 12490, 7: 12500}
+
+--- Lineage (DAG) RDD ---
+(8) PythonRDD[18] at RDD at PythonRDD.scala:59 []
+ |  MapPartitionsRDD[17] at mapPartitions at PythonRDD.scala:197 []
+ |  ShuffledRDD[16] at partitionBy at DirectMethodHandleAccessor.java:103 []
+ +-(8) PairwiseRDD[15] at sortBy at /home/claude/proj/wordcount_pyspark.py:55 []
+    |  PythonRDD[14] at sortBy at /home/claude/proj/wordcount_pyspark.py:55 []
+    |  MapPartitionsRDD[11] at mapPartitions at PythonRDD.scala:197 []
+    |  ShuffledRDD[10] at partitionBy at DirectMethodHandleAccessor.java:103 []
+    +-(8) PairwiseRDD[9] at reduceByKey at /home/claude/proj/wordcount_pyspark.py:50 []
+       |  PythonRDD[8] at reduceByKey at /home/claude/proj/wordcount_pyspark.py:50 []
+       |  MapPartitionsRDD[6] at coalesce at DirectMethodHandleAccessor.java:103 []
+       |  CoalescedRDD[5] at coalesce at DirectMethodHandleAccessor.java:103 []
+       |  ShuffledRDD[4] at coalesce at DirectMethodHandleAccessor.java:103 []
+       +-(8) MapPartitionsRDD[3] at coalesce at DirectMethodHandleAccessor.java:103 []
+          |  PythonRDD[2] at RDD at PythonRDD.scala:59 []
+          |  data/bigdata.txt MapPartitionsRDD[1] at textFile at DirectMethodHandleAccessor.java:103 []
+          |  data/bigdata.txt HadoopRDD[0] at textFile at DirectMethodHandleAccessor.java:103 []
+
+=== 10 KATA TERBANYAK ===
+ 1. yang           183399
+ 2. dan             97727
+ 3. di              67919
+ 4. untuk           52675
+ 5. dengan          43042
+ 6. dalam           37126
+ 7. pada            31633
+ 8. ini             28150
+ 9. itu             25395
+10. dari            22802
+
+Waktu eksekusi action : 0.97 detik
+[A_diagnosa] Job 0: status=SUCCEEDED
+     Stage 0: 8 task, selesai=8  -> dijalankan
+     Stage 1: 8 task, selesai=8  -> dijalankan
+[B_sortBy_sampling] Job 2: status=SUCCEEDED
+     Stage 5: 8 task, selesai=0  -> SKIPPED (shuffle dipakai ulang)
+     Stage 6: 8 task, selesai=0  -> SKIPPED (shuffle dipakai ulang)
+     Stage 7: 8 task, selesai=8  -> dijalankan
+[B_sortBy_sampling] Job 1: status=SUCCEEDED
+     Stage 2: 8 task, selesai=0  -> SKIPPED (shuffle dipakai ulang)
+     Stage 3: 8 task, selesai=8  -> dijalankan
+     Stage 4: 8 task, selesai=8  -> dijalankan
+[C_take10] Job 3: status=SUCCEEDED
+     Stage 8: 8 task, selesai=0  -> SKIPPED (shuffle dipakai ulang)
+     Stage 9: 8 task, selesai=0  -> SKIPPED (shuffle dipakai ulang)
+     Stage 10: 8 task, selesai=8  -> dijalankan
+     Stage 11: 1 task, selesai=1  -> dijalankan
+
+Total token : 1298900
+Kata unik   : 148
