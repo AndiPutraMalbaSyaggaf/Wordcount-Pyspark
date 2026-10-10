@@ -4,10 +4,10 @@
 
 | | |
 |---|---|
-| Nama | [Nama Lengkap] |
-| NIM | [NIM] |
-| Mata kuliah | Analisis Pemrosesan Data Paralel |
-| Dosen | [Nama Dosen] |
+| Nama | Andi Putra Malba Syaggaf |
+| NIM | 312410370 |
+| Mata kuliah | BIG DATA |
+| Dosen | Hemdani Rahendra Herlianto, S.Kom., M.T.I. |
 
 ## Deskripsi
 
